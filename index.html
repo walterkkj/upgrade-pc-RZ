@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upgrade PC Gamer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #f0f0f0;
+      font-weight: 600;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .total {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🖥️ Upgrade PC Gamer</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Produto</th>
+        <th>Preço (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-preco="1599">
+        <td>Processador</td>
+        <td>
+          <a href="https://www.kabum.com.br/produto/497276" target="_blank">
+            AMD Ryzen 5 5500X3D
+          </a>
+        </td>
+        <td>1.599</td>
+      </tr>
+
+      <tr data-preco="699">
+        <td>Placa-mãe</td>
+        <td>
+          <a href="https://www.pichau.com.br/placa-mae-b550" target="_blank">
+            B550 Gaming Wi-Fi (equivalente)
+          </a>
+        </td>
+        <td>699</td>
+      </tr>
+
+      <tr data-preco="1659">
+        <td>Placa de vídeo</td>
+        <td>
+          <a href="https://www.kabum.com.br/produto/462229" target="_blank">
+            RX 7600 Gigabyte Triple
+          </a>
+        </td>
+        <td>1.659</td>
+      </tr>
+
+      <tr data-preco="206">
+        <td>Gabinete</td>
+        <td>
+          <a href="https://www.pichau.com.br/gabinete-gamer-mancer-cv700m" target="_blank">
+            Mancer CV700M
+          </a>
+        </td>
+        <td>206</td>
+      </tr>
+
+      <tr data-preco="384">
+        <td>Memória RAM</td>
+        <td>
+          <a href="https://www.kabum.com.br/produto/384573" target="_blank">
+            Kingston 32GB (2×16GB) DDR4
+          </a>
+        </td>
+        <td>384</td>
+      </tr>
+
+      <tr data-preco="1041">
+        <td>Monitor</td>
+        <td>
+          <a href="https://www.kabum.com.br/produto/520582" target="_blank">
+            LG UltraGear 27″ 180Hz
+          </a>
+        </td>
+        <td>1.041</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total">
+    💰 Total: R$ <span id="total">0</span>
+  </div>
+</div>
+
+<script>
+  function calcularTotal() {
+    let total = 0;
+    document.querySelectorAll('tr[data-preco]').forEach(el => {
+      total += Number(el.dataset-preco);
+    });
+    document.getElementById('total').innerText =
+      total.toLocaleString('pt-BR');
+  }
+  calcularTotal();
+</script>
+
+</body>
+</html>
