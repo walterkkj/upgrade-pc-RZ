@@ -141,13 +141,15 @@
 </div>
 
 <script>
+function recalcularTotal() {
   let total = 0;
-  document.querySelectorAll('[data-preco]').forEach(el => {
-    total += Number(el.dataset.preco);
+  document.querySelectorAll('tr[data-preco]').forEach(linha => {
+    total += Number(linha.dataset.preco);
   });
   document.getElementById('total').innerText =
     total.toLocaleString('pt-BR');
-</script>
+}
 
-</body>
-</html>
+// calcula automaticamente ao carregar
+document.addEventListener("DOMContentLoaded", recalcularTotal);
+</script>
